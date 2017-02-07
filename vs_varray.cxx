@@ -114,7 +114,7 @@ void time1D(const int N) {
         marray1D(array);
     auto t1 = std::chrono::high_resolution_clock::now();
 
-    auto dur0 = std::chrono::duration_cast<std::chrono::microseconds>(t1 - t0);
+    auto dur0 = std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0);
     std::cout << "... in total: " << dur0.count() << " ms" << std::endl;
     std::cout << "... per itearion " << dur0.count() / N << " ms" << std::endl;
     
@@ -127,12 +127,12 @@ void time1D(const int N) {
         vigra1D(varray);
     auto t10 = std::chrono::high_resolution_clock::now();
 
-    auto dur00 = std::chrono::duration_cast<std::chrono::microseconds>(t10 - t00);
+    auto dur00 = std::chrono::duration_cast<std::chrono::milliseconds>(t10 - t00);
     std::cout << "... in total: " << dur00.count() << " ms" << std::endl;
     std::cout << "... per itearion " << dur00.count() / N << " ms" << std::endl;
 }
 
 int main() {
-    time1D(25);
+    time1D(50);
     //time2D(25);
 }
